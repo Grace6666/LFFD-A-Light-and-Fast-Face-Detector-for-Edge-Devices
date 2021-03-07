@@ -158,14 +158,14 @@ param_num_image_channel = 3
 param_num_output_scales = 8
 
 # feature map size for each scale
-param_feature_map_size_list = [159, 159, 79, 79, 39, 19, 19, 19]
+param_feature_map_size_list = [159, 159, 79, 79, 39, 19, 19, 19] # Figure 2. c8, c10, c13, c15, c18, c21, c23, c25
 
 # bbox lower bound for each scale
-param_bbox_small_list = [10, 15, 20, 40, 70, 110, 250, 400]
+param_bbox_small_list = [10, 15, 20, 40, 70, 110, 250, 400] # Table 2
 assert len(param_bbox_small_list) == param_num_output_scales
 
 # bbox upper bound for each scale
-param_bbox_large_list = [15, 20, 40, 70, 110, 250, 400, 560]
+param_bbox_large_list = [15, 20, 40, 70, 110, 250, 400, 560] # Table 2
 assert len(param_bbox_large_list) == param_num_output_scales
 
 # bbox gray lower bound for each scale
@@ -176,7 +176,7 @@ param_bbox_large_gray_list = [math.ceil(v * 1.1) for v in param_bbox_large_list]
 # the RF size of each scale used for normalization, here we use param_bbox_large_list for better regression
 param_receptive_field_list = param_bbox_large_list
 # RF stride for each scale
-param_receptive_field_stride = [4, 4, 8, 8, 16, 32, 32, 32]
+param_receptive_field_stride = [4, 4, 8, 8, 16, 32, 32, 32] # stride on corresponding layer to cover whole original image
 # the start location of the first RF of each scale
 param_receptive_field_center_start = [3, 3, 7, 7, 15, 31, 31, 31]
 
