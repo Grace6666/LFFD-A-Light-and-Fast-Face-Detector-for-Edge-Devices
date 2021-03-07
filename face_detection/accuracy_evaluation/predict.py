@@ -165,7 +165,8 @@ class Predict(object):
             outputs.append(output.asnumpy())
         toc = time.time()
         infer_time = (toc - tic) * 1000
-
+        
+        # project out from network to original image to get boxes
         for i in range(self.num_output_scales):
             if i in skip_scale_branch_list:
                 continue
